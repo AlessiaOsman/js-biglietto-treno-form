@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biglietto del treno DOM</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
-    <input id="km" type="number" placeholder="Quanti km devi percorrere?">
-    <input id="age" type="text" placeholder="Scrivi la tua età">
-    <button id="button" type="button">Genera</button>
+    <form class="row g-3">
+        <div class="col-md-3">
+            <label for="name" class="form-label">Nome e Cognome</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+        <div class="col-md-3">
+            <label for="km" class="form-label">Km da percorrere</label>
+            <input type="number" class="form-control" id="km">
+        </div>
+        <div class="col-md-3">
+            <label for="age" class="form-label">Km da percorrere</label>
+            <input type="number" class="form-control" id="age">
+        </div>
+        <div class="col-12">
+            <button id="button" type="submit" class="btn btn-primary">Genera</button>
+          </div>
+    </form>
+    <hr>
+    <p id="ticketName"></p>
+    <p id="ticketType"></p>
+    <p id="coach"></p>
+    <p id="code"></p>
+    <p id="ticketFinalPrice"></p>
+
     <script src="js/script.js"></script>
 </body>
+
 </html>

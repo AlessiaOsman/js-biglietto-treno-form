@@ -13,34 +13,57 @@ console.log('JS OK')
 
 const inputKm = document.getElementById('km')
 const inputAge = document.getElementById('age')
+const inputName = document.getElementById('name')
 const button = document.getElementById('button')
+const paragraphName = document.getElementById('ticketName')
+const paragraphPrice = document.getElementById('ticketFinalPrice')
+const paragraphType = document.getElementById('ticketType')
+const paragraphCoach = document.getElementById('coach')
+const paragraphCode = document.getElementById('code')
 
-console.log(inputKm, inputAge)
+console.log(inputKm, inputAge, inputName, paragraphName, paragraphPrice, paragraphType)
 
 let discount = null; 
 
 let message = 'Il costo del tuo biglietto è '
 
+let userTicketType = 'Biglietto Standard'
 
-button.addEventListener('click', function(){
+
+
+
+button.addEventListener ('click', function(){
     const numberKm = parseInt(inputKm.value);
     console.log(numberKm)
 
     const userAge = parseInt(inputAge.value);
     console.log(userAge)
 
+    const userName = inputName.value
+
+    let coachNumber = Math.floor(Math.random()*10)
+
+    let codeCp = Math.floor(Math.random()*10000)
+
     const unitPrice = 0.21
 
     const ticketPrice = numberKm*unitPrice;
     console.log(ticketPrice)
 
+    if (userAge === isNaN || numberKm === isNaN ){
+        alert('i valori inseriti non sono corretti');
+        return
+    }
+
     if (userAge < 18){
         discount = ticketPrice * 20 / 100
         console.log(discount)
+        userTicketType = 'Biglietto giovani'
     
     } else if (userAge > 65){
         discount = ticketPrice * 40 / 100
         console.log(discount)
+        userTicketType = 'Biglietto over 65'
     }
 
     let finalPrice = ticketPrice - discount;
@@ -48,6 +71,12 @@ button.addEventListener('click', function(){
     
     message += finalPrice.toFixed(2) + ' euro';
     console.log(message)
+
+    paragraphName.innerText = userName
+    paragraphPrice.innerText = finalPrice
+    paragraphType.innerText = userTicketType
+    paragraphCoach.innerText = coachNumber
+    paragraphCode.innerText = codeCp
 })
 
 
