@@ -11,36 +11,43 @@ console.log('JS OK')
 // Creare form in pagina
 // Recap dati e output prezzo stampato in pagina
 
-const numberKm = parseInt(prompt('Quanti km devi percorrere?', 20))
-const userAge = parseInt(prompt('Qual è la tua età?', 39))
+const inputKm = document.getElementById('km')
+const inputAge = document.getElementById('age')
+const button = document.getElementById('button')
 
-console.log(numberKm, userAge)
+console.log(inputKm, inputAge)
 
-const paragraph = document.getElementById('finalUserPrice')
-
-// Potevo creare una variabile per il costo a km
-
-const ticketPrice = numberKm*0.21
-console.log(ticketPrice)
-
-let discount = 0; // a livello concettuale 0 non andava bene perchè se non rientro nelle casistiche lo sconto non è 0 ma null
+let discount = null; 
 
 let message = 'Il costo del tuo biglietto è '
 
-if (userAge < 18){
-    discount = ticketPrice * 20 / 100
-    console.log(discount)
 
-} else if (userAge > 65){
-    discount = ticketPrice * 40 / 100
-    console.log(discount)
-}
+button.addEventListener('click', function(){
+    const numberKm = parseInt(inputKm.value);
+    console.log(numberKm)
 
-let finalPrice = ticketPrice - discount
-console.log(finalPrice)
+    const userAge = parseInt(inputAge.value);
+    console.log(userAge)
 
-message += finalPrice.toFixed(2) + ' euro';
+    const unitPrice = 0.21
 
-/*message += Math.floor(finalPrice*100)/100 + ' euro'; Lo scopo del Math.floor è un altro */
+    const ticketPrice = numberKm*unitPrice;
+    console.log(ticketPrice)
 
-paragraph.innerText = message
+    if (userAge < 18){
+        discount = ticketPrice * 20 / 100
+        console.log(discount)
+    
+    } else if (userAge > 65){
+        discount = ticketPrice * 40 / 100
+        console.log(discount)
+    }
+
+    let finalPrice = ticketPrice - discount;
+    console.log(finalPrice)
+    
+    message += finalPrice.toFixed(2) + ' euro';
+    console.log(message)
+})
+
+
