@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <form class="row g-3">
+    <div class="container-fluid py-3">
+    <form class="row g-3 mb-5">
         <div class="col-md-3">
             <label for="name" class="form-label">Nome e Cognome</label>
             <input type="text" class="form-control" id="name">
@@ -21,20 +22,38 @@
             <input type="number" class="form-control" id="km">
         </div>
         <div class="col-md-3">
-            <label for="age" class="form-label">Km da percorrere</label>
+            <label for="age" class="form-label">La tua età</label>
             <input type="number" class="form-control" id="age">
         </div>
         <div class="col-12">
-            <button id="button" type="submit" class="btn btn-primary">Genera</button>
+            <button id="button" type="button" class="btn btn-primary">Genera</button>
           </div>
     </form>
-    <hr>
-    <p id="ticketName"></p>
-    <p id="ticketType"></p>
-    <p id="coach"></p>
-    <p id="code"></p>
-    <p id="ticketFinalPrice"></p>
-
+    <div id="ticket">
+    <div class="d-flex gap-5 justify-content-around border rounded p-3">
+        <div class="d-flex flex-column align-items-center bg-success p-3">
+            <h2>Nome Passeggero</h2>
+            <p id="ticketName"></p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <h2>Offerta</h2>
+            <p id="ticketType"></p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <h2>Carrozza</h2>
+            <p id="coach"></p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <h2>Codice CP</h2>
+            <p id="code"></p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <h2>Costo Biglietto</h2>
+            <p id="ticketFinalPrice"></p>
+        </div>
+    </div>
+</div>
+</div>
     <script src="js/script.js"></script>
 </body>
 

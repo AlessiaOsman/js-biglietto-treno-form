@@ -20,6 +20,7 @@ const paragraphPrice = document.getElementById('ticketFinalPrice')
 const paragraphType = document.getElementById('ticketType')
 const paragraphCoach = document.getElementById('coach')
 const paragraphCode = document.getElementById('code')
+const userTicket = document.getElementById('ticket')
 
 console.log(inputKm, inputAge, inputName, paragraphName, paragraphPrice, paragraphType)
 
@@ -50,6 +51,8 @@ button.addEventListener ('click', function(){
     const ticketPrice = numberKm*unitPrice;
     console.log(ticketPrice)
 
+    
+
     if (userAge === isNaN || numberKm === isNaN ){
         alert('i valori inseriti non sono corretti');
         return
@@ -69,14 +72,13 @@ button.addEventListener ('click', function(){
     let finalPrice = ticketPrice - discount;
     console.log(finalPrice)
     
-    message += finalPrice.toFixed(2) + ' euro';
-    console.log(message)
 
     paragraphName.innerText = userName
-    paragraphPrice.innerText = finalPrice
+    paragraphPrice.innerText = finalPrice.toFixed(2)
     paragraphType.innerText = userTicketType
     paragraphCoach.innerText = coachNumber
     paragraphCode.innerText = codeCp
+
 })
 
 
