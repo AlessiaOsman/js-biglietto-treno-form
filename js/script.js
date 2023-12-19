@@ -21,6 +21,7 @@ const paragraphType = document.getElementById('ticketType')
 const paragraphCoach = document.getElementById('coach')
 const paragraphCode = document.getElementById('code')
 const userTicket = document.getElementById('ticket')
+const resetButton = document.getElementById('reset-button')
 
 console.log(inputKm, inputAge, inputName, paragraphName, paragraphPrice, paragraphType)
 
@@ -79,6 +80,18 @@ button.addEventListener ('click', function(){
     paragraphCoach.innerText = coachNumber
     paragraphCode.innerText = codeCp
 
+    inputAge.value = ''
+    inputKm.value = ''
+    inputName.value = ''
+
+})
+
+resetButton.addEventListener('click', function(){
+    paragraphName.innerText = ''
+    paragraphPrice.innerText = ''
+    paragraphType.innerText = ''
+    paragraphCoach.innerText = ''
+    paragraphCode.innerText = ''
 })
 
 
